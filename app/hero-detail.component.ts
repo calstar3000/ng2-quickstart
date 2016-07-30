@@ -1,4 +1,8 @@
+
+// dependencies
 import { Component, Input } from '@angular/core';
+
+// classes
 import { Hero } from './hero';
 
 @Component({
