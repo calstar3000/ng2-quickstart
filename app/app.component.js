@@ -13,7 +13,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 require('./rxjs-extensions');
 // services
-var hero_service_1 = require('./hero.service');
+var hero_service_1 = require('./hero/hero.service');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';

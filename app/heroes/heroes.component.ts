@@ -4,18 +4,18 @@ import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 // classes
-import { Hero } from './hero';
+import { Hero } from './../hero/hero';
 
 // components
-import { HeroDetailComponent } from './hero-detail.component';
+import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 
 // services
-import { HeroService } from './hero.service';
+import { HeroService } from './../hero/hero.service';
 
 @Component({
     selector: 'my-heroes',
-    templateUrl: 'app/heroes.component.html',
-    styleUrls: ['app/heroes.component.css'],
+    templateUrl: 'app/heroes/heroes.component.html',
+    styleUrls: ['app/heroes/heroes.component.css'],
     directives: [HeroDetailComponent],
     providers: []
 })
@@ -58,8 +58,6 @@ export class HeroesComponent implements OnInit {
             })
             .catch(error => this.error = error);
     }
-
-
 
     ngOnInit() {
       this.getHeroes();

@@ -4,18 +4,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 // classes
-import { Hero } from './hero';
+import { Hero } from './../hero/hero';
 
 // services
-import { HeroService } from './hero.service';
+import { HeroService } from './../hero/hero.service';
 
 // components
-import { HeroSearchComponent } from './hero-search.component';
+import { HeroSearchComponent } from './../search/hero-search.component';
 
 @Component({
     selector: 'my-dashboard',
-    templateUrl: 'app/dashboard.component.html',
-    styleUrls: ['app/dashboard.component.css'],
+    templateUrl: 'app/dashboard/dashboard.component.html',
+    styleUrls: ['app/dashboard/dashboard.component.css'],
     directives: [HeroSearchComponent]
 })
 

@@ -12,9 +12,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 // services
-var hero_service_1 = require('./hero.service');
+var hero_service_1 = require('./../hero/hero.service');
 // components
-var hero_search_component_1 = require('./hero-search.component');
+var hero_search_component_1 = require('./../search/hero-search.component');
 var DashboardComponent = (function () {
     function DashboardComponent(heroService, router) {
         this.heroService = heroService;
@@ -34,8 +34,8 @@ var DashboardComponent = (function () {
     DashboardComponent = __decorate([
         core_1.Component({
             selector: 'my-dashboard',
-            templateUrl: 'app/dashboard.component.html',
-            styleUrls: ['app/dashboard.component.css'],
+            templateUrl: 'app/dashboard/dashboard.component.html',
+            styleUrls: ['app/dashboard/dashboard.component.css'],
             directives: [hero_search_component_1.HeroSearchComponent]
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])

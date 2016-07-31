@@ -9,11 +9,11 @@ import { Subject }           from 'rxjs/Subject';
 import { HeroSearchService } from './hero-search.service';
 
 // classes
-import { Hero } from './hero';
+import { Hero } from './../hero/hero';
 
 @Component({
     selector: 'hero-search',
-    templateUrl: 'app/hero-search.component.html',
+    templateUrl: 'app/search/hero-search.component.html',
     providers: [HeroSearchService]
 })
 
@@ -28,7 +28,7 @@ export class HeroSearchComponent implements OnInit {
 
     // Push a search term into the observable stream.
     search(term: string) { 
-      this.searchSubject.next(term); 
+        this.searchSubject.next(term); 
     }
     
     ngOnInit() {

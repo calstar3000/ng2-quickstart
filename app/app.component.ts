@@ -5,7 +5,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import './rxjs-extensions';
 
 // services
-import { HeroService } from './hero.service';
+import { HeroService } from './hero/hero.service';
 
 @Component({
     selector: 'my-app',
