@@ -2,6 +2,7 @@
 // dependencies
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import './rxjs-extensions';
 
 // services
 import { HeroService } from './hero.service';

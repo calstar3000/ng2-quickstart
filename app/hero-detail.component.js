@@ -22,20 +22,41 @@ var HeroDetailComponent = (function () {
         this.close = new core_1.EventEmitter();
         this.navigated = false; // true if navigated here
     }
+    HeroDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.heroService
+            .save(this.hero)
+            .then(function (hero) {
+            _this.hero = hero; // saved hero, w/ id if new
+            _this.goBack(hero);
+        })
+            .catch(function (error) { return _this.error = error; }); // TODO: Display error message
+    };
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
-            var id = +params['id'];
-            _this.heroService
-                .getHero(id)
-                .then(function (hero) { return _this.hero = hero; });
+            if (params['id'] !== undefined) {
+                var id = +params['id'];
+                _this.navigated = true;
+                _this.heroService
+                    .getHero(id)
+                    .then(function (hero) { return _this.hero = hero; });
+            }
+            else {
+                _this.navigated = false;
+                _this.hero = new hero_1.Hero();
+            }
         });
     };
     HeroDetailComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
-    HeroDetailComponent.prototype.goBack = function () {
-        window.history.back();
+    HeroDetailComponent.prototype.goBack = function (savedHero) {
+        if (savedHero === void 0) { savedHero = null; }
+        this.close.emit(savedHero);
+        if (this.navigated) {
+            window.history.back();
+        }
     };
     __decorate([
         core_1.Input(), 
