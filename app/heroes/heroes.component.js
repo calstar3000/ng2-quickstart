@@ -20,7 +20,7 @@ var HeroesComponent = (function () {
         this.router = router;
         this.heroService = heroService;
         this.title = '';
-        this.addingHero = true;
+        this.addingHero = false;
     }
     HeroesComponent.prototype.addHero = function () {
         this.addingHero = true;

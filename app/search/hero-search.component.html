@@ -2,10 +2,19 @@
 <div 
     id="search-component">
     <h4>Hero Search</h4>
-    <input 
-        #searchBox 
-        id="search-box" 
-        (keyup)="search(searchBox.value)" />
+    <form>
+        <div class="row">
+            <div class="twelve columns">
+                <input 
+                    class="u-full-width" 
+                    type="text" 
+                    placeholder="Search..."
+                    #searchBox 
+                    id="search-box" 
+                    (keyup)="search(searchBox.value)">
+            </div>
+        </div>
+    </form>
     <div>
         <div 
             *ngFor="let hero of heroes | async"

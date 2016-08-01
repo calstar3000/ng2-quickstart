@@ -1,22 +1,25 @@
 <h1>{{title}}</h1>
 <h2>My Heroes</h2>
 <ul
-    class="heroes">
-    <li 
+    class="row heroes">
+    <li
+        class="twelve columns" 
         *ngFor="let hero of heroes" 
         (click)="onSelect(hero)" 
         [class.selected]="hero === selectedHero">
         <span 
             class="badge">{{hero.id}}</span> {{hero.name}}
-        <button 
-            class="delete-button" 
-            (click)="deleteHero(hero, $event)">Delete</button>
+        <a 
+            class="delete-link u-pull-right" 
+            (click)="deleteHero(hero, $event)">Delete</a>
     </li>
 </ul>
 <div 
     class="error" 
     *ngIf="error">{{error}}</div>
-<button 
+<button
+    class="button-primary"
+    *ngIf="!addingHero"
     (click)="addHero()">Add New Hero</button>
 <div 
     *ngIf="addingHero">

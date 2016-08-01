@@ -25,7 +25,7 @@ export class HeroesComponent implements OnInit {
     selectedHero: Hero;
     heroes: Hero[];
     error: any;
-    addingHero = true;
+    addingHero = false;
 
     constructor(
         private router: Router,

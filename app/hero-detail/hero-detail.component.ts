@@ -21,6 +21,7 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     error: any;
     navigated = false; // true if navigated here
     sub: any;
+    newHeroId;
 
     constructor(
         private heroService: HeroService,
@@ -38,13 +39,20 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.heroService
+            .getHeroes()
+            .then(heroes => this.newHeroId = heroes[heroes.length - 1].id + 1);
+
         this.sub = this.route.params.subscribe(params => {
             if (params['id'] !== undefined) {
                 let id = +params['id'];
                 this.navigated = true;
                 this.heroService
                     .getHero(id)
-                    .then(hero => this.hero = hero);
+                    .then(hero => { 
+                        this.hero = hero;
+                        this.newHeroId = hero.id;
+                    });
             } else {
                 this.navigated = false;
                 this.hero = new Hero();

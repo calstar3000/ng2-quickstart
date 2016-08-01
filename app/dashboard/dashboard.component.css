@@ -1,4 +1,22 @@
-[class*='col-'] {
+h3 {
+    text-align: center; 
+}
+
+.module-hero-container {
+    margin-bottom: 2rem;
+}
+
+.module {
+    padding-top: 2rem;
+    text-align: center;
+    color: #333;
+    max-height: 120px;
+    min-width: 120px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+/*[class*='col-'] {
   float: left;
 }
 *, *:after, *:before {
@@ -6,9 +24,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-h3 {
-  text-align: center; margin-bottom: 0;
-}
+
 [class*='col-'] {
   padding-right: 20px;
   padding-bottom: 20px;
@@ -22,15 +38,7 @@ h3 {
 .col-1-4 {
   width: 25%;
 }
-.module {
-    padding: 20px;
-    text-align: center;
-    color: #eee;
-    max-height: 120px;
-    min-width: 120px;
-    background-color: #607D8B;
-    border-radius: 2px;
-}
+
 h4 {
   position: relative;
 }
@@ -58,3 +66,4 @@ h4 {
       min-width: 60px;
     }
 }
+*/

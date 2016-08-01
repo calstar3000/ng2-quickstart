@@ -34,13 +34,19 @@ var HeroDetailComponent = (function () {
     };
     HeroDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.heroService
+            .getHeroes()
+            .then(function (heroes) { return _this.newHeroId = heroes[heroes.length - 1].id + 1; });
         this.sub = this.route.params.subscribe(function (params) {
             if (params['id'] !== undefined) {
                 var id = +params['id'];
                 _this.navigated = true;
                 _this.heroService
                     .getHero(id)
-                    .then(function (hero) { return _this.hero = hero; });
+                    .then(function (hero) {
+                    _this.hero = hero;
+                    _this.newHeroId = hero.id;
+                });
             }
             else {
                 _this.navigated = false;

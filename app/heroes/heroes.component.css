@@ -1,4 +1,15 @@
-.selected {
+.heroes {
+    list-style-type: none;
+}
+
+.heroes li {
+    cursor: pointer;
+    background-color: #EEE;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/*.selected {
           background-color: #CFD8DC !important;
           color: white;
         }
@@ -44,4 +55,4 @@
           height: 1.8em;
           margin-right: .8em;
           border-radius: 4px 0 0 4px;
-        }
+        }*/
