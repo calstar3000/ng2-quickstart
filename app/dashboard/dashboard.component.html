@@ -1,14 +1,18 @@
 <h3>Top Heroes</h3>
+<hero-search></hero-search>
 <div 
-    class="row module-hero-container">
+    class="module-hero-container">
     <div 
-        *ngFor="let hero of heroes" 
-        (click)="gotoDetail(hero)" 
-        class="three columns">
+        *ngFor="let heroRow of heroRows"
+        class="row">
         <div 
-            class="module hero">
-            <h5>{{hero.name}}</h5>
+            *ngFor="let hero of heroRow" 
+            (click)="gotoDetail(hero)" 
+            class="three columns">
+            <div 
+                class="module hero">
+                <h5>{{hero.name}}</h5>
+            </div>
         </div>
     </div>
 </div>
-<hero-search></hero-search>

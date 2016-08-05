@@ -2,10 +2,10 @@
     <form>
         <div class="row">
             <div>
-                <label>id: </label>{{ newHeroId }}
+                <label>id: {{ newHeroId }}</label>
             </div>
             <div class="twelve columns">
-                <label for="exampleEmailInput">{{hero.name}} details!</label>
+                <label for="exampleEmailInput">Details: {{ hero.name }}</label>
                 <input [(ngModel)]="hero.name" class="u-full-width" type="text" placeholder="name" />
             </div>
         </div>

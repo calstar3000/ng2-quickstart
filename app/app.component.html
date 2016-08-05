@@ -1,6 +1,14 @@
-<h1>{{title}}</h1>
 <nav>
-    <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
-    <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
+    <div
+        class="container">
+        <h1>{{ title }}</h1>
+        <div class="nav-link-container">
+            <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+            <a [routerLink]="['/heroes']" routerLinkActive="active">Heroes</a>
+        </div>
+    </div>
 </nav>
-<router-outlet></router-outlet>
+<div
+    class="container">
+    <router-outlet></router-outlet>
+</div>

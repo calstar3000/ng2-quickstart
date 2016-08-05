@@ -6,6 +6,10 @@ h3 {
     margin-bottom: 2rem;
 }
 
+.module-hero-container > .row {
+  margin-bottom: 2rem;
+}
+
 .module {
     padding-top: 2rem;
     text-align: center;

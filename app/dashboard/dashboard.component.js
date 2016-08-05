@@ -20,16 +20,31 @@ var DashboardComponent = (function () {
         this.heroService = heroService;
         this.router = router;
         this.heroes = [];
+        this.heroRows = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService
             .getHeroes()
-            .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
+            .then(function (heroes) {
+            _this.heroes = heroes;
+            _this.splitHeroesToRows();
+        });
     };
     DashboardComponent.prototype.gotoDetail = function (hero) {
         var link = ['/detail', hero.id];
         this.router.navigate(link);
+    };
+    DashboardComponent.prototype.splitHeroesToRows = function () {
+        var heroIndex = 0;
+        while (heroIndex < this.heroes.length) {
+            var row = [];
+            for (var i = 0; i < 4 && heroIndex < this.heroes.length; i++) {
+                row.push(this.heroes[heroIndex]);
+                heroIndex++;
+            }
+            this.heroRows.push(row);
+        }
     };
     DashboardComponent = __decorate([
         core_1.Component({

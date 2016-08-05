@@ -21,6 +21,7 @@ import { HeroSearchComponent } from './../search/hero-search.component';
 
 export class DashboardComponent implements OnInit {
     heroes: Hero[] = [];
+    heroRows: Hero[][] = [];
 
     constructor(
         private heroService: HeroService,
@@ -30,12 +31,30 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
         this.heroService
             .getHeroes()
-            .then(heroes => this.heroes = heroes.slice(1, 5));
+            .then(heroes => {
+                this.heroes = heroes;
+                this.splitHeroesToRows();
+            });
     }
 
     gotoDetail(hero) {
         let link = ['/detail', hero.id];
         this.router.navigate(link);
+    }
+
+    private splitHeroesToRows() {
+        let heroIndex = 0;
+
+        while (heroIndex < this.heroes.length) {
+            let row = [];
+
+            for (let i = 0; i < 4 && heroIndex < this.heroes.length; i++) {
+                row.push(this.heroes[heroIndex]);
+                heroIndex++;
+            }
+
+            this.heroRows.push(row);
+        }
     }
 }
 
